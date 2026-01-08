@@ -2,6 +2,7 @@ const bodyParser = require("body-parser");
 const express = require("express");
 const request = require("request");
 const https = require("https");
+require("dotenv").config();
 
 const app = express();
 app.use(express.static("public"));
@@ -29,12 +30,13 @@ app.post("/", function(req, res){
             }
         ]
     };
-
-    const url = "https://us9.api.mailchimp.com/3.0/lists/2b79b01a67";
+    const identifier = process.env.id_list;
+    const key = process.env.api_key;
+    const url = `https://us9.api.mailchimp.com/3.0/lists/${identifier}`;
     const jsonData = JSON.stringify(data);
     const options = {
         method: "POST",
-        auth: "angela1:a94b63373c01f550b32214fd0cd4c36e-us9"
+        auth: `angela1:${key}`
     };
 
     const httpRequest = https.request(url, options, function(response){
@@ -57,7 +59,3 @@ app.post("/", function(req, res){
 const port = 3000;
 
 app.listen(port, console.log(`Server is listening on port ${port}`));
-
-// a94b63373c01f550b32214fd0cd4c36e-us9
-
-// Id: 2b79b01a67
