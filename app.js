@@ -56,6 +56,11 @@ app.post("/", function(req, res){
     httpRequest.end();
 });
 
+
 const port = 3000;
+
+app.post("/failure", function(req, res){
+    res.redirect("/");
+})
 
 app.listen(port, console.log(`Server is listening on port ${port}`));

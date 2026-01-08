@@ -28,3 +28,15 @@ body {
   margin-bottom: -1px;
   border-radius: 0;
 }
+.btn-custom:hover{
+  background-color: lightgray;
+  color: black;
+}
+.btn-custom{
+  color: black;
+  border: solid black 1px;
+}
+
+#fail{
+  display: inline-block;
+}

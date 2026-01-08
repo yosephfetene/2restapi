@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +12,12 @@
     <div class="p-5 mb-4 bg-body-tertiary rounded-3"> 
         <div class="container-fluid py-5"> 
             <h1 class="display-5 fw-bold">Oops!</h1> 
-            <p class="col-md-8 fs-4">There was a slight problem signing you up. Please try again or contact the developer.</p> 
+            <p class="col-md-8 fs-4">There was a slight problem signing you up. Please try again or contact the developer team.</p> 
+            <form id="fail" method="post" action="/failure">
+                <button
+                class="btn btn-warning btn-lg" type="submit">Try Again
+            </button></form>
+            <button class="btn btn-lg btn-custom">Contact Developer team</button>
         </div> 
     </div>
 </body>
